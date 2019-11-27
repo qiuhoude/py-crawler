@@ -1,0 +1,6 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+httpbin.org	FALSE	/	FALSE		age	28
+httpbin.org	FALSE	/	FALSE		name	qiu
