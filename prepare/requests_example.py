@@ -11,18 +11,22 @@ import requests
 
 headers = {
     "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
 }
 
 
 def getTest():
     payload = {'wd': '湖北'}
     # params 接收一个字典或者字符串的查询参数，字典类型自动转换为url编码，不需要urlencode()
-    response = requests.get("http://www.baidu.com/s", params=payload, headers=headers)
+    response = requests.get("https://www.baidu.com/s", params=payload, headers=headers)
     # 查看响应内容，response.text 返回的是Unicode格式的数据
-    print(response.text)
+    # print(response.text)
+
     # 查看响应内容，response.content返回的字节流数据
-    # print(response.content)
+    # print(response.content.decode('utf-8'))
     # print(response.raw.read(256))
+    with open("baidu.html", mode="w", encoding='utf-8') as fp:
+        fp.write(response.content.decode('utf-8'))
 
     # 查看完整url地址
     print(response.url)

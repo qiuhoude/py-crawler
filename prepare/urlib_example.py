@@ -143,6 +143,9 @@ def loadCookie():
 
     cookiejar = MozillaCookieJar("cookie.txt")
     cookiejar.load(ignore_discard=True, ignore_expires=True)
+    for c in cookiejar:
+        print(c.__dict__)
+
     handler = request.HTTPCookieProcessor(cookiejar)
     opener = request.build_opener(handler)
     req = request.Request("http://httpbin.org/cookies", headers=headers)
@@ -157,6 +160,6 @@ if __name__ == '__main__':
     # requestTest()
     # proxyTest()
     # cookieTest()
-    saveCookie()
+    # saveCookie()
     loadCookie()
     pass
