@@ -38,6 +38,7 @@ def parseTest():
 
     # 可以将经过编码后的url参数进行解码。示例代码如下：
     nd = parse.parse_qs(qs)
+
     print(nd)
 
     # 解析url
