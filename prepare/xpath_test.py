@@ -7,6 +7,8 @@ from lxml import etree
 
 def TestBossJob():
     # etree.HTML() # 解析字符串使用
+    # htmlElement = etree.HTML("<a>哈哈<a/>")
+    # print(etree.tostring(htmlElement, encoding='utf-8').decode('utf-8'))
     html_parser = etree.HTMLParser(encoding='utf-8')
     html = etree.parse('boss_golang.html', parser=html_parser)
     jobDivs = html.xpath('//div[@class="job-primary"]')
